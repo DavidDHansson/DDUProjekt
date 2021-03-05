@@ -1,0 +1,72 @@
+
+/* CSS CONFIG STYLESHEET */
+/* CSS CONFIG STYLESHEET */
+/* CSS CONFIG STYLESHEET */
+
+/* ROOT */
+:root {
+    --nav-color: #141C26;
+    --nav-text-color: #000;
+    --nav-text-color-extended: #cfcfcf;
+    --button-color: #433BBF;
+
+    --title-color-dark: #242424;
+    --text-color-dark: #2e2e2e;
+    --link-color-hover: #525252;
+    --white-text-darker: #cfcfcf;
+    --white-text: #fff;
+
+    --theme-color-1: #141C26;
+    --theme-color-2: #3F4B59;
+    --theme-color-3: #6D7B8C;
+    --theme-color-4: #8694A6;
+    --theme-color-5: #BFC7D9;
+    --theme-color-6: #99A5C2;
+
+    --dark-theme-1: #101A26;
+}
+
+/* FONTS */
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: local('Roboto-Bold'), url(./fonts/Roboto-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Italic';
+    src: local('Roboto-Italic'), url(./fonts/Roboto-Italic.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: local('Roboto-Light'), url(./fonts/Roboto-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-LightItalic';
+    src: local('Roboto-LightItalic'), url(./fonts/Roboto-LightItalic.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: local('Roboto-Medium'), url(./fonts/Roboto-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: local('Roboto-Regular'), url(./fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+/* CONFIG */
+.app-flex-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: black;
+    font-family: Roboto-Regular;
+}
+
+body {
+    background-color: var(--theme-color-3);
+}

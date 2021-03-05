@@ -1,0 +1,117 @@
+.user-info-main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--theme-color-5);
+}
+
+.user-info-sub-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.user-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    transform: translateY(-120px);
+}
+
+.user-info-cell-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.user-info-cell-wrapper:first-child {
+    padding-top: 20%;
+}
+
+.user-info-cell-wrapper > div {
+    width: 40%;
+}
+
+.user-info-cell-active {
+    background-color: var(--theme-color-6);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 10px;
+}
+
+.user-info-cell-active img {
+    width: 40%;
+    margin-left: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.user-info-cell-active h1 {
+    font-family: Roboto-Medium;
+    font-size: 40px;
+    background-color: var(--theme-color-2);
+    color: var(--white-text-darker);
+    width: calc(100% - 60px);
+    margin-left: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.user-info-cell-active div > span:first-child {
+    font-family: Roboto-Bold;
+}
+
+.user-info-cell-active div > span:last-child {
+    font-family: Roboto-Regular;
+}
+
+.user-info-cell-active div {
+    margin-left: 30px;
+    color: var(--title-color-dark);
+    width: calc(100% - 60px);
+    font-size: 18px;
+    height: 2em;
+}
+
+.user-info-cell-active div a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.user-info-cell-wrapper a:hover {
+    color: var(--link-color-hover);
+}
+
+.user-info-cell-prop {
+    width: 20%;
+}
+
+/* MEDIA */
+@media screen and (max-width: 1200px) {
+    .user-info-cell-prop {
+        display: none;
+    }
+    .user-info-cell-wrapper > div {
+        transform: translateY(0%);
+        margin: 50px 0 0 0;
+        width: 100%;
+    }
+    .user-info-wrapper:first-child {
+        padding-top: 100px;
+    }
+    .user-info-cell-active {
+        width: 100%;
+    }
+    .user-info-cell-active * {
+        padding: 10px 0 10px 0;
+        word-break: break-all;
+    }
+}

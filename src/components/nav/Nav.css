@@ -1,0 +1,107 @@
+.nav-flex-wrapper {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 100;
+
+    width: 100vw;
+    height: 80px;
+
+    top: 0;
+    opacity: 0.9;
+    font-size: 20px;
+    font-family: Roboto-Regular;
+    transition: background-color 0.5s;
+    color: var(--nav-text-color-extended);
+    text-decoration: none;
+}
+
+.nav-extended {
+    background-color: transparent;
+}
+
+.nav-not-extended {
+    background-color: var(--nav-color);
+}
+
+.nav-main-wrapper {
+    width: 65%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-main-wrapper>div {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.nav-main-wrapper>div:hover {
+    transform: translateY(-3px);
+}
+
+.nav-user-wrapper {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-user-button {
+    font-size: 18px;
+    font-family: Roboto-Bold;
+    white-space: nowrap;
+
+    background-color: var(--button-color);
+    border-bottom-width: 0;
+
+    padding: 12px 24px;
+    margin-top: 3px;
+    border-radius: 6px;
+    transition: all 0.1s ease-in-out;
+}
+
+.nav-user-button:hover {
+    border-bottom-width: 0;
+    border-bottom: 4px solid var(--nav-text-color-extended);
+    margin-top: -3px;
+}
+
+.nav-user-button:active {
+    filter: brightness(90%);
+}
+
+.nav-remove-link-styling {
+    text-decoration: none;
+    color: var(--nav-text-color-extended);
+    cursor: pointer;
+}
+
+.nav-remove-link-styling:active {
+    color: var(--nav-text-color-extended);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 450px) {
+    .nav-user-button {
+        font-size: 14px;
+        margin-right: 50px;
+    }
+    .nav-flex-wrapper {
+        font-size: 18px;
+    }
+    .nav-main-wrapper {
+        overflow-x: auto;
+    }
+    .nav-main-wrapper div {
+        white-space: nowrap;
+        padding: 8px;
+        margin: 5px;
+        border: 1px solid var(--nav-text-color-extended);
+        border-radius: 6px;
+    }
+    .nav-main-wrapper div:first-child {
+        margin-left: calc((5 * 26px) + 50px);
+    }
+}

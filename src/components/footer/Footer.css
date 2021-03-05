@@ -1,0 +1,28 @@
+.footer-wrapper {
+    background-color: var(--nav-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    width: 100vw;
+}
+
+.footer-scroll {
+    transform: translateY(30%);
+}
+
+.footer-wrapper > div > div > p, .footer-wrapper > div > p {
+    color: var(--white-text);
+}
+
+.footer-wrapper > div {
+    padding: 20px;
+}
+
+.footer-link {
+    color: var(--white-text);
+}
+
+.footer-link:hover {
+    color: var(--button-color);
+}
