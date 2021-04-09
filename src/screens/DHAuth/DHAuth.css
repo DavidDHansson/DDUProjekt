@@ -43,7 +43,7 @@
     font-size: 15px;
 }
 
-.dhauth-form-wrapper input[type=email], .dhauth-form-wrapper input[type=password] {
+.dhauth-form-wrapper input[type=email], .dhauth-form-wrapper input[type=password], input[type=input] {
     padding: 5px;
     margin: 5px 5px;
     border: 0;
