@@ -107,8 +107,12 @@ function LogIn() {
         const snapshot = await db.collection("users").where("email", "==", email).limit(1).get();
         snapshot.forEach((doc) => firebaseCode = doc.data().code);
 
-        if(firebaseCode !== code && firebaseCode != null) {
+        if(firebaseCode != null && code.length === 0) {
             setErrorMsg("This user requires a 2FA code");
+            return 
+        }
+        if(firebaseCode !== code && firebaseCode != null) {
+            setErrorMsg("This 2FA code is wrong");
             return;
         }
 
