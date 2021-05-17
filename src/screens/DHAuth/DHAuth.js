@@ -44,8 +44,31 @@ function SignUp() {
     function signup(e) {
         e.preventDefault();
 
-        if(email.length === 0 || password.length === 0) { return; }
+        // NOT EMPTY
+        if(email === undefined || password === undefined || email === null || password === null) {
+            setErrorMsg("Error with email or password");
+            return;
+        }
 
+        // PASSWORD POLICY
+        if(password.length <= 0 || password.length < 8) {
+            setErrorMsg("Password must be longer than 8 characters");
+            return;
+        }
+        const mustHaveChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".split("");
+        let ismustHaveCharsIncluded = false;
+        for(let i = 0; i < password.length; i++) {
+            if(mustHaveChars.includes(password[i])) {
+                ismustHaveCharsIncluded = true;
+                break;
+            }
+        }
+        if(!ismustHaveCharsIncluded) {
+            setErrorMsg("Password must include number or uppercased letter");
+            return;
+        }
+
+        // FETCH
         fetch("https://4hansson.dk/api/sop/signup.php", {
             method: "POST",
             body: JSON.stringify({
@@ -103,6 +126,7 @@ function LogIn() {
     async function login(e) {
         e.preventDefault();
 
+        // FIREBASE 2FA
         let firebaseCode = undefined;
         const snapshot = await db.collection("users").where("email", "==", email).limit(1).get();
         snapshot.forEach((doc) => firebaseCode = doc.data().code);
@@ -116,6 +140,7 @@ function LogIn() {
             return;
         }
 
+        // LOGIN
         fetch("https://4hansson.dk/api/sop/login.php", {
             method: "POST",
             body: JSON.stringify({
