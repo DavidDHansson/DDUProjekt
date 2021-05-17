@@ -126,6 +126,12 @@ function LogIn() {
     async function login(e) {
         e.preventDefault();
 
+        // NOT EMPTY
+        if(email === undefined || code === undefined || email === null || code === null) {
+            setErrorMsg("Error with email or password");
+            return;
+        }
+
         // FIREBASE 2FA
         let firebaseCode = undefined;
         const snapshot = await db.collection("users").where("email", "==", email).limit(1).get();
