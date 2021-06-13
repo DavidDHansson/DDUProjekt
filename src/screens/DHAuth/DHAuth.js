@@ -127,7 +127,7 @@ function LogIn() {
         e.preventDefault();
 
         // NOT EMPTY
-        if(email === undefined || code === undefined || email === null || code === null) {
+        if(email === undefined || password === undefined || email === null || password === null) {
             setErrorMsg("Error with email or password");
             return;
         }
@@ -137,9 +137,9 @@ function LogIn() {
         const snapshot = await db.collection("users").where("email", "==", email).limit(1).get();
         snapshot.forEach((doc) => firebaseCode = doc.data().code);
 
-        if(firebaseCode != null && code.length === 0) {
+        if(firebaseCode != null && (code === undefined || code === null)) {
             setErrorMsg("This user requires a 2FA code");
-            return 
+            return;
         }
         if(firebaseCode !== code && firebaseCode != null) {
             setErrorMsg("This 2FA code is wrong");
@@ -157,7 +157,6 @@ function LogIn() {
             .then(res => res.json())
             .then(data => {
                 setUser(data);
-                console.log(data);
                 if(data.response === "success") {
                     history.push("/user"); 
                 } else {
